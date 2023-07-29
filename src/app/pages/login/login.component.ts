@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ConfigService } from '../../common/http.service';
+import { HTTPService } from 'src/app/common/http.service';
+import { BrowserStorageService } from 'src/app/common/storage.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -13,11 +14,11 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private configService: ConfigService) { }
+  constructor(private HTTPService: HTTPService, private BrowserStorageService: BrowserStorageService) { }
   onLogin() {
     let user = this.loginForm.value;
-    this.configService.login(user).subscribe((res) => {
-      console.log(res.token);
+    this.HTTPService.login(user).subscribe((res) => {
+      this.BrowserStorageService.setToken(res.token)
     })
   }
 }
