@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   template: `<router-outlet></router-outlet>`,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'laptrinhweb_fe';
-}
+export class AppComponent { }
