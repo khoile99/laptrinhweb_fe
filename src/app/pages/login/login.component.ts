@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  form: { email: string, password: string } = { email: 'asdasd', password: '' };
+  form: { email: string, password: string } = { email: '', password: '' };
   onLogin() {
     console.log(this.form);
   }
