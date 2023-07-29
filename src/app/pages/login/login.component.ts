@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../../common/http.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  form: { email: string, password: string } = { email: '', password: '' };
+  loginForm = new FormGroup({
+    userName: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  constructor(private configService: ConfigService) { }
   onLogin() {
-    console.log(this.form);
+    let user = this.loginForm.value;
+    this.configService.login(user).subscribe((res) => {
+      console.log(res.token);
+    })
   }
 }
