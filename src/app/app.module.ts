@@ -11,6 +11,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
 import { HomePageComponent } from './pages/main-layout/home-page/home-page.component';
+import { SearchComponent } from './pages/main-layout/search/search.component';
+import { DetailComponent } from './pages/main-layout/detail/detail.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { HomePageComponent } from './pages/main-layout/home-page/home-page.compo
         RegisterComponent,
         HeaderComponent,
         MainLayoutComponent,
-        HomePageComponent
+        HomePageComponent,
+        SearchComponent,
+        DetailComponent
     ],
     imports: [
         BrowserModule,
