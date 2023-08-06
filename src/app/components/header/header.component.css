@@ -1,0 +1,40 @@
+header {
+  padding: 20px;
+  background: aquamarine;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.header__search {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search__input {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__input input {
+  border: unset;
+  height: 100%;
+  background: transparent;
+  outline: unset;
+  width: 100%;
+}
+
+.search__input i {
+  cursor: pointer;
+}
