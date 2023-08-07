@@ -1,3 +1,4 @@
+<div class="cover" *ngIf="showTable" (click)="showTable = false"></div>
 <header>
   <div class="header__nav">
     <a>Support</a>
@@ -6,8 +7,22 @@
   </div>
   <div class="header__search">
     <div class="search__input">
-      <input type="text" placeholder="Please Search your Product" />
+      <input
+        type="text"
+        placeholder="Please Search your Product"
+        (click)="showTable = true"
+        (input)="filterResult()"
+        [(ngModel)]="nameFilter"
+      />
       <i class="fa fa-search"></i>
+    </div>
+    <div *ngIf="showTable" class="table">
+      <div
+        *ngFor="let product of productList"
+        [routerLink]="['/home/detail', product.id]"
+      >
+        {{ product.name }}
+      </div>
     </div>
   </div>
 </header>

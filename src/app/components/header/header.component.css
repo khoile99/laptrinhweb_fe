@@ -1,3 +1,9 @@
+.cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
 header {
   padding: 20px;
   background: aquamarine;
@@ -37,4 +43,32 @@ header {
 
 .search__input i {
   cursor: pointer;
+}
+
+.table {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 20px;
+}
+
+.table div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: context-menu;
+}
+
+.table div:hover {
+  background-color: aquamarine;
 }
