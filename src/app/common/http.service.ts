@@ -21,4 +21,8 @@ export class HTTPService {
   listProducts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/public/list_products`);
   }
+
+  getProduct(id: string | null): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/public/get_product/${id}`);
+  }
 }
