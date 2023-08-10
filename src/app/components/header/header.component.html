@@ -20,6 +20,7 @@
       <div
         *ngFor="let product of productList"
         [routerLink]="['/home/detail', product.id]"
+        (click)="showTable = false"
       >
         {{ product.name }}
       </div>
