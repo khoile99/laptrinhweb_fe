@@ -1,9 +1,27 @@
-<div class="cover" *ngIf="showTable" (click)="showTable = false"></div>
+<div
+  class="cover"
+  *ngIf="showTable || showtableUser"
+  (click)="showTable = showtableUser = false"
+></div>
 <header>
   <div class="header__nav">
     <a>Support</a>
-    <a routerLink="/login" routerLinkActive="active">Login</a>
-    <a routerLink="/register" routerLinkActive="active">Register</a>
+    <div *ngIf="user.userName">
+      <a id="user" (click)="showtableUser = true"
+        ><i class="fa fa-user"></i>{{ user.userName }}</a
+      >
+      <div class="user-table" *ngIf="showtableUser">
+        <div><i class="fa fa-shopping-cart"></i>Go to Cart</div>
+        <div><i class="fa fa-edit"></i>Edit Information</div>
+        <div (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</div>
+      </div>
+    </div>
+    <a routerLink="/login" routerLinkActive="active" *ngIf="!user.userName"
+      >Login</a
+    >
+    <a routerLink="/register" routerLinkActive="active" *ngIf="!user.userName"
+      >Register</a
+    >
   </div>
   <div class="header__search">
     <div class="search__input">

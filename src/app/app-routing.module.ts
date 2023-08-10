@@ -9,6 +9,11 @@ import { DetailComponent } from './pages/main-layout/detail/detail.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'prefix', //default
+    redirectTo: 'home',
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },

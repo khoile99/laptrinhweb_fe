@@ -72,3 +72,39 @@ header {
 .table div:hover {
   background-color: aquamarine;
 }
+
+a {
+  font-size: 20px;
+}
+
+i {
+  margin-right: 5px;
+}
+
+#user {
+  cursor: pointer;
+  position: relative;
+}
+
+.user-table {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  right: 0;
+}
+
+.user-table div {
+  cursor: default;
+  font-size: 25px;
+  height: 50px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.user-table div:hover {
+  background-color: aquamarine;
+}

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Products } from 'src/app/entity/products';
 import { HTTPService } from 'src/app/common/http.service';
+import { BrowserStorageService } from 'src/app/common/storage.service';
+import { User } from 'src/app/entity/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +13,23 @@ import { HTTPService } from 'src/app/common/http.service';
 export class HeaderComponent {
   allProductList: Products[] = [];
   productList: Products[] = [];
+  user: User = {
+    address: '',
+    birthday: '',
+    email: '',
+    isBlocked: null,
+    phoneNumber: '',
+    userName: '',
+    userType: null,
+  };
   showTable = false;
+  showtableUser = false;
   nameFilter = '';
-  constructor(private HTTPService: HTTPService) {
+  constructor(
+    private HTTPService: HTTPService,
+    private storage: BrowserStorageService,
+    private router: Router
+  ) {
     this.HTTPService.listProducts().subscribe((results) => {
       for (let result of results) {
         this.productList.push({
@@ -29,11 +46,29 @@ export class HeaderComponent {
       }
     });
     this.allProductList = this.productList;
+    if (this.storage.getToken()) {
+      this.HTTPService.getUser().subscribe((result) => {
+        this.user = {
+          address: result.address,
+          birthday: result.birthday,
+          email: result.email,
+          isBlocked: result.is_blocked,
+          phoneNumber: result.phone_number,
+          userName: result.user_name,
+          userType: result.user_type,
+        };
+      });
+    }
   }
 
   filterResult() {
     this.productList = this.allProductList.filter((ele) => {
       return ele.name.toLowerCase().includes(this.nameFilter.toLowerCase());
     });
+  }
+
+  onLogout() {
+    this.storage.clearToken();
+    this.router.navigate(['/login']);
   }
 }

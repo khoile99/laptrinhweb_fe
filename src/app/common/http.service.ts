@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BrowserStorageService } from './storage.service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +8,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class HTTPService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private storage: BrowserStorageService
+  ) {}
   apiUrl = environment.apiUrl;
 
   login(userForm: any): Observable<any> {
@@ -16,6 +20,12 @@ export class HTTPService {
       form.append(key, userForm[key]);
     }
     return this.http.post<any>(`${this.apiUrl}/login`, form);
+  }
+
+  getUser(): Observable<any> {
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<any>(`${this.apiUrl}/get_user`, { headers });
   }
 
   register(userForm: any): Observable<any> {
