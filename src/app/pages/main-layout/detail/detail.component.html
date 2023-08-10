@@ -1,6 +1,40 @@
-<div>{{ product.name }}</div>
-<div>{{ product.description }}</div>
-<div>{{ product.brand }}</div>
-<div>{{ product.color }}</div>
-<div>{{ product.material }}</div>
-<img *ngFor="let img of product.img" src="{{ img }}" />
+<div class="detail">
+  <div class="img">
+    <div class="cover-img w-h-500">
+      <img src="{{ product.img[imgIndex] }}" />
+    </div>
+    <div class="description-img">
+      <div
+        *ngFor="let img of product.img; index as i"
+        class="cover-img"
+        (mouseenter)="imgIndex = i"
+      >
+        <img src="{{ img }}" />
+      </div>
+    </div>
+  </div>
+  <div>
+    <h1>{{ product.name }}</h1>
+    <h2>{{ product.price != 0 ? "$" + product.price : "" }}</h2>
+    <div *ngIf="product.brand" class="row">
+      <div class="title">Brand</div>
+      <div>{{ product.brand }}</div>
+    </div>
+    <div *ngIf="product.color" class="row">
+      <div class="title">Color</div>
+      <div>{{ product.color }}</div>
+    </div>
+    <div *ngIf="product.material" class="row">
+      <div class="title">Material</div>
+      <div>{{ product.material }}</div>
+    </div>
+    <div *ngIf="product.description">
+      <h3>About this Item</h3>
+      <div class="describe">{{ product.description }}</div>
+    </div>
+    <div class="btn-cover">
+      <button><i class="fa fa-cart-plus"></i> Add to Cart</button>
+      <button class="bg-orange">Buy Now</button>
+    </div>
+  </div>
+</div>

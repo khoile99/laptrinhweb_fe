@@ -18,6 +18,7 @@ export class HeaderComponent {
         this.productList.push({
           id: result.id,
           name: result.name,
+          price: result.price,
           description: result.description,
           brand: result.brand,
           color: result.color,

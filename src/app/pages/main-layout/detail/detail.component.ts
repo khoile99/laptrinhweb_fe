@@ -9,9 +9,11 @@ import { Products } from 'src/app/entity/products';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent {
+  imgIndex = 0;
   product: Products = {
     id: 0,
     name: '',
+    price: 0,
     description: '',
     brand: '',
     color: '',
@@ -19,10 +21,18 @@ export class DetailComponent {
     size: '',
     img: [],
   };
-  constructor(private route: ActivatedRoute, private HTTPService: HTTPService) {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.HTTPService.getProduct(id).subscribe((result) => {
-      this.product = result;
+
+  constructor(
+    private route: ActivatedRoute,
+    private HTTPService: HTTPService
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((param) => {
+      const id = param['id'];
+      this.HTTPService.getProduct(id).subscribe((result) => {
+        this.product = result;
+      });
     });
   }
 }

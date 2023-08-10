@@ -1,12 +1,31 @@
 body {
-    margin: unset;
+  margin: unset;
 }
 
 .text-center {
-    text-align: center
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  border-radius: 100px;
+  padding: 10px 30px;
+  border: unset;
+  background-color: #ffd814;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.bg-orange {
+  background-color: #ffa41c;
 }
 
 button[disabled] {
-    background: #D1D1D1 !important;
-    cursor: unset !important;
+  background: #d1d1d1 !important;
+  cursor: unset !important;
 }
