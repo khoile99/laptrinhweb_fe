@@ -18,6 +18,14 @@ export class HTTPService {
     return this.http.post<any>(`${this.apiUrl}/login`, form);
   }
 
+  register(userForm: any): Observable<any> {
+    let form = new FormData();
+    for (let key in userForm) {
+      form.append(key, userForm[key]);
+    }
+    return this.http.post<any>(`${this.apiUrl}/register`, form);
+  }
+
   listProducts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/public/list_products`);
   }

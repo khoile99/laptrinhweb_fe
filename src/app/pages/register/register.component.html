@@ -1,1 +1,84 @@
-<p>register works!</p>
+<div class="container">
+  <div class="form">
+    <div class="login100-pic">
+      <img src="assets/img-01.png" alt="img" />
+    </div>
+    <form
+      class="form__login"
+      [formGroup]="registerForm"
+      (ngSubmit)="onRegister()"
+    >
+      <span class="form__login-title"> Member Register </span>
+      <div class="form__login__input">
+        <input
+          type="text"
+          name="userName"
+          placeholder="User Name"
+          formControlName="userName"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__input">
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          formControlName="address"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-address-card" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__input">
+        <input
+          type="text"
+          name="phoneNumber"
+          placeholder="Phone Number"
+          formControlName="phoneNumber"
+          maxlength="10"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__input">
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__input">
+        <input
+          type="date"
+          name="birthday"
+          placeholder="Birthday"
+          formControlName="birthday"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__input">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span class="form__login__input__symbol">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__login__btn">
+        <button type="submit" [disabled]="!registerForm.valid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
