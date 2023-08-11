@@ -3,9 +3,9 @@ export interface Products {
   name: string;
   price: number;
   description: string;
-  brand: string;
-  color: string;
-  material: string;
-  size: string;
+  brand: string | null;
+  color: string | null;
+  material: string | null;
+  size: string | null;
   img: string[];
 }
