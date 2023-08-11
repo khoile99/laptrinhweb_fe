@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
           color: result.color,
           material: result.material,
           size: result.size,
-          img: [],
+          img: result.img,
         });
       }
     });

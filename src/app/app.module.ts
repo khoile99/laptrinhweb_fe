@@ -13,6 +13,7 @@ import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
 import { HomePageComponent } from './pages/main-layout/home-page/home-page.component';
 import { SearchComponent } from './pages/main-layout/search/search.component';
 import { DetailComponent } from './pages/main-layout/detail/detail.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { DetailComponent } from './pages/main-layout/detail/detail.component';
         MainLayoutComponent,
         HomePageComponent,
         SearchComponent,
-        DetailComponent
+        DetailComponent,
+        ProductCardComponent
     ],
     imports: [
         BrowserModule,

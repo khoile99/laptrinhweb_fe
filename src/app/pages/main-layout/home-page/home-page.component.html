@@ -1,3 +1,9 @@
-<div *ngFor="let product of products">
-  {{ product.name }}
+<div *ngFor="let product of products" class="products">
+  <app-product-card
+    [img]="product.img[0]"
+    [name]="product.name"
+    [brand]="product.brand"
+    [price]="product.price"
+    [id]="product.id"
+  ></app-product-card>
 </div>
