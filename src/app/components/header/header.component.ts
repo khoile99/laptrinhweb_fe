@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/entity/products';
 import { HTTPService } from 'src/app/common/http.service';
 import { BrowserStorageService } from 'src/app/common/storage.service';
 import { User } from 'src/app/entity/users';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/common/data.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   allProductList: Products[] = [];
   productList: Products[] = [];
   user: User = {
@@ -28,8 +29,11 @@ export class HeaderComponent {
   constructor(
     private HTTPService: HTTPService,
     private storage: BrowserStorageService,
-    private router: Router
-  ) {
+    private router: Router,
+    private data: DataService
+  ) {}
+
+  ngOnInit() {
     this.HTTPService.listProducts().subscribe((results) => {
       for (let result of results) {
         this.productList.push({
@@ -46,6 +50,7 @@ export class HeaderComponent {
       }
     });
     this.allProductList = this.productList;
+    this.data.changeProducts(this.allProductList);
     if (this.storage.getToken()) {
       this.HTTPService.getUser().subscribe((result) => {
         this.user = {
