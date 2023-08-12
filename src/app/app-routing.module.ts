@@ -6,6 +6,7 @@ import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
 import { HomePageComponent } from './pages/main-layout/home-page/home-page.component';
 import { SearchComponent } from './pages/main-layout/search/search.component';
 import { DetailComponent } from './pages/main-layout/detail/detail.component';
+import { SupportComponent } from './pages/main-layout/support/support.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'search', component: SearchComponent },
       { path: 'detail/:id', component: DetailComponent },
+      { path: 'support', component: SupportComponent },
     ],
   },
 ];

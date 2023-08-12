@@ -14,6 +14,8 @@ import { HomePageComponent } from './pages/main-layout/home-page/home-page.compo
 import { SearchComponent } from './pages/main-layout/search/search.component';
 import { DetailComponent } from './pages/main-layout/detail/detail.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { SupportComponent } from './pages/main-layout/support/support.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +27,9 @@ import { ProductCardComponent } from './components/product-card/product-card.com
         HomePageComponent,
         SearchComponent,
         DetailComponent,
-        ProductCardComponent
+        ProductCardComponent,
+        SupportComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,

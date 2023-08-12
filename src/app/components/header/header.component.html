@@ -5,7 +5,7 @@
 ></div>
 <header>
   <div class="header__nav">
-    <a>Support</a>
+    <a routerLink="/support" routerLinkActive="active">Support</a>
     <div *ngIf="user.userName">
       <a id="user" (click)="showtableUser = true"
         ><i class="fa fa-user"></i>{{ user.userName }}</a

@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Support Options and Contact Us</h1>
+  <div>
+    <h2>Some frequently question:</h2>
+    <div *ngFor="let qa of qas">
+      <h3>{{ qa.question }}</h3>
+      <ol>
+        <li *ngFor="let answer of qa.answer">{{ answer }}</li>
+      </ol>
+    </div>
+  </div>
+  <div>
+    <h2>
+      If you need help, we offer a number of options for customer support.
+    </h2>
+    <div>
+      <div>
+        <h3><i class="fa fa-envelope" aria-hidden="true"></i>{{ email }}</h3>
+      </div>
+      <div>
+        <h3>
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          {{ phoneNumber }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

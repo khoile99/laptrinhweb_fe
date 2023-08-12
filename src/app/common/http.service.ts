@@ -59,4 +59,12 @@ export class HTTPService {
       headers,
     });
   }
+
+  getQA(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/public/get_qa`);
+  }
+
+  getInformation(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/public/get_information`);
+  }
 }
