@@ -9,9 +9,21 @@ import { Products } from 'src/app/entity/products';
 })
 export class HomePageComponent {
   products: Products[] = [];
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 6;
+
   constructor(private data: DataService) {
     this.data.currentProduct.subscribe(
       (products) => (this.products = products)
     );
+  }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
   }
 }

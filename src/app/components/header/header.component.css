@@ -11,8 +11,21 @@ header {
 
 .header__nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.header__nav-right {
+  display: flex;
   gap: 30px;
+}
+
+.header__nav-home {
+  margin-left: 20px;
+}
+
+.header__nav-home i {
+  font-size: 30px;
+  margin-right: unset;
 }
 
 .header__search {

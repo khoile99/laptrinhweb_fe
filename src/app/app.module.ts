@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,27 +19,28 @@ import { SupportComponent } from './pages/main-layout/support/support.component'
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        LoginComponent,
-        RegisterComponent,
-        HeaderComponent,
-        MainLayoutComponent,
-        HomePageComponent,
-        SearchComponent,
-        DetailComponent,
-        ProductCardComponent,
-        SupportComponent,
-        FooterComponent
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HeaderComponent,
+    MainLayoutComponent,
+    HomePageComponent,
+    SearchComponent,
+    DetailComponent,
+    ProductCardComponent,
+    SupportComponent,
+    FooterComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

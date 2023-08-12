@@ -5,23 +5,30 @@
 ></div>
 <header>
   <div class="header__nav">
-    <a routerLink="/support" routerLinkActive="active">Support</a>
-    <div *ngIf="user.userName">
-      <a id="user" (click)="showtableUser = true"
-        ><i class="fa fa-user"></i>{{ user.userName }}</a
-      >
-      <div class="user-table" *ngIf="showtableUser">
-        <div><i class="fa fa-shopping-cart"></i>Go to Cart</div>
-        <div><i class="fa fa-edit"></i>Edit Information</div>
-        <div (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</div>
-      </div>
+    <div class="header__nav-home">
+      <a routerLink="/home" routerLinkActive="active"
+        ><i class="fa-solid fa-house"></i
+      ></a>
     </div>
-    <a routerLink="/login" routerLinkActive="active" *ngIf="!user.userName"
-      >Login</a
-    >
-    <a routerLink="/register" routerLinkActive="active" *ngIf="!user.userName"
-      >Register</a
-    >
+    <div class="header__nav-right">
+      <a routerLink="/support" routerLinkActive="active">Support</a>
+      <div *ngIf="user.userName">
+        <a id="user" (click)="showtableUser = true"
+          ><i class="fa fa-user"></i>{{ user.userName }}</a
+        >
+        <div class="user-table" *ngIf="showtableUser">
+          <div><i class="fa fa-shopping-cart"></i>Go to Cart</div>
+          <div><i class="fa fa-edit"></i>Edit Information</div>
+          <div (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</div>
+        </div>
+      </div>
+      <a routerLink="/login" routerLinkActive="active" *ngIf="!user.userName"
+        >Login</a
+      >
+      <a routerLink="/register" routerLinkActive="active" *ngIf="!user.userName"
+        >Register</a
+      >
+    </div>
   </div>
   <div class="header__search">
     <div class="search__input">
