@@ -1,9 +1,15 @@
-<div *ngFor="let product of products" class="products">
-  <app-product-card
-    [img]="product.img[0]"
-    [name]="product.name"
-    [brand]="product.brand"
-    [price]="product.price"
-    [id]="product.id"
-  ></app-product-card>
+<div class="container">
+  <h1>Welcome to my shop page</h1>
+  <i class="fa-solid fa-hands-clapping fa-beat"></i>
+  <i class="fa-solid fa-hands-clapping fa-beat"></i>
+  <i class="fa-solid fa-hands-clapping fa-beat"></i>
+  <div *ngFor="let product of products" class="products">
+    <app-product-card
+      [img]="product.img[0]"
+      [name]="product.name"
+      [brand]="product.brand"
+      [price]="product.price"
+      [id]="product.id"
+    ></app-product-card>
+  </div>
 </div>

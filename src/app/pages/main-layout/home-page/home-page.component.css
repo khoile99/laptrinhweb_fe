@@ -3,3 +3,12 @@
   display: inline-flex;
   gap: 10px;
 }
+
+.container {
+  text-align: center;
+}
+
+i {
+  font-size: 50px;
+  margin: 20px;
+}
