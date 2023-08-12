@@ -38,3 +38,22 @@
     </div>
   </div>
 </div>
+
+<div class="comment-container last">
+  <div class="comment">
+    <h1>Review</h1>
+    <div class="comment__ele cmt-ele">
+      <textarea placeholder="Add Comment" [(ngModel)]="commentInput"></textarea>
+      <button id="cmt-btn" (click)="sendComment()" [disabled]="!commentInput">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div *ngFor="let comment of comments" class="comment__ele">
+      <div class="comment-row">
+        <div class="comment__usrname">{{ comment.userName }}</div>
+        <div class="comment__date">{{ comment.createdAt }}</div>
+      </div>
+      <span>{{ comment.comment }}</span>
+    </div>
+  </div>
+</div>

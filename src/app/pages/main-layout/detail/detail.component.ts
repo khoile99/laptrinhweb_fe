@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HTTPService } from 'src/app/common/http.service';
 import { Products } from 'src/app/entity/products';
+import { Comment } from 'src/app/entity/comments';
 
 @Component({
   selector: 'app-detail',
@@ -10,6 +11,9 @@ import { Products } from 'src/app/entity/products';
 })
 export class DetailComponent {
   imgIndex = 0;
+  comments: Comment[] = [];
+  commentInput: string = '';
+  id: string = '';
   product: Products = {
     id: 0,
     name: '',
@@ -29,10 +33,35 @@ export class DetailComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe((param) => {
-      const id = param['id'];
-      this.HTTPService.getProduct(id).subscribe((result) => {
+      this.commentInput = '';
+      this.comments = [];
+      this.id = param['id'];
+      this.HTTPService.getProduct(this.id).subscribe((result) => {
         this.product = result;
       });
+      this.HTTPService.getComments(this.id).subscribe((results) => {
+        for (let result of results) {
+          this.comments.push({
+            id: result.id,
+            userName: result.user_name,
+            comment: result.comment,
+            createdAt: result.created_at,
+          });
+        }
+      });
+    });
+  }
+
+  sendComment() {
+    let form = { comment: this.commentInput, productId: this.id };
+    this.HTTPService.addComment(form).subscribe((result) => {
+      let comment: Comment = {
+        id: result.id,
+        userName: result.user_name,
+        comment: result.comment,
+        createdAt: result.created_at,
+      };
+      this.comments.unshift(comment);
     });
   }
 }
