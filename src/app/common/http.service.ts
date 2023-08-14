@@ -165,4 +165,16 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  editProduct(productForm: any): Observable<any> {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    let form = new productForm();
+    for (let key in productForm) {
+      form.append(key, productForm[key]);
+    }
+    return this.http.post<any>(`${this.apiUrl}/admin/edit_product`, form, {
+      headers: headers,
+    });
+  }
 }

@@ -1,0 +1,157 @@
+.detail {
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.img {
+  width: 700px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cover-img {
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-h-500 {
+  width: 500px;
+  height: 500px;
+}
+
+.cover-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.description-img {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.describe {
+  white-space: pre-line;
+}
+
+.title {
+  width: 100px;
+  font-weight: bolder;
+}
+
+.btn-cover {
+  margin-top: 30px;
+  gap: 30px;
+  display: flex;
+}
+
+.fa.fa-cart-plus {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.comment-container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment {
+  width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  padding: 20px;
+}
+
+.comment > div:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.comment__ele {
+  padding: 10px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.comment__usrname {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.comment__date {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.last {
+  margin-bottom: 50px;
+}
+
+.comment__ele > textarea {
+  padding: 10px;
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+#cmt-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+
+.cmt-ele {
+  position: relative;
+}
+
+.name {
+  width: 800px;
+  height: 200px;
+}
+
+.h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.price input {
+  font-size: inherit;
+  font-weight: inherit;
+  border: unset;
+}
+
+input {
+  border: unset;
+}
+
+.description {
+  width: 800px;
+  height: 200px;
+  font-size: 15px;
+}
+
+textarea {
+  border: unset;
+  overflow: hidden;
+  resize: none;
+  font-family: inherit;
+}

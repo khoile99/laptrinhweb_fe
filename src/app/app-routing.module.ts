@@ -14,6 +14,8 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
 import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
 import { EditInformationComponent } from './pages/admin-layout/edit-information/edit-information.component';
+import { ListProductsComponent } from './pages/admin-layout/list-products/list-products.component';
+import { EditProductComponent } from './pages/admin-layout/edit-product/edit-product.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,8 @@ const routes: Routes = [
       { path: 'list-users', component: ListUsersComponent },
       { path: 'edit-user/:id', component: EditUserByAdminComponent },
       { path: 'edit-information', component: EditInformationComponent },
+      { path: 'list-products', component: ListProductsComponent },
+      { path: 'edit-product/:id', component: EditProductComponent },
     ],
   },
 ];

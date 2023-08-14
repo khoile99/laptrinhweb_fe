@@ -1,0 +1,91 @@
+<div class="detail">
+  <div class="img">
+    <div class="cover-img w-h-500">
+      <img src="{{ imgs[imgIndex] }}" />
+    </div>
+    <div class="description-img">
+      <div
+        *ngFor="let img of imgs; index as i"
+        class="cover-img"
+        (mouseenter)="imgIndex = i"
+      >
+        <img src="{{ img }}" />
+      </div>
+    </div>
+  </div>
+  <div>
+    <form
+      class="form__update"
+      [formGroup]="productForm"
+      (ngSubmit)="onUpdate()"
+    >
+      <textarea
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+        class="name h1"
+      ></textarea>
+      <div class="row price">
+        <div>$</div>
+        <input type="text" placeholder="Price" formControlName="price" />
+      </div>
+      <div class="row">
+        <div class="title">Brand</div>
+        <div>
+          <input type="text" placeholder="Brand" formControlName="brand" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">Color</div>
+        <div>
+          <input type="text" placeholder="Color" formControlName="color" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">Material</div>
+        <div>
+          <input
+            type="text"
+            placeholder="Material"
+            formControlName="material"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">Size</div>
+        <div>
+          <input type="text" placeholder="Size" formControlName="size" />
+        </div>
+      </div>
+      <div>
+        <h3>About this Item</h3>
+        <div class="describe">
+          <textarea
+            type="text"
+            placeholder="Description"
+            formControlName="description"
+            class="description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="btn-cover">
+        <button class="bg-orange" [disabled]="!productForm.valid">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="comment-container last">
+  <div class="comment">
+    <h1>Review</h1>
+    <div *ngFor="let comment of comments" class="comment__ele">
+      <div class="comment-row">
+        <div class="comment__usrname">{{ comment.userName }}</div>
+        <div class="comment__date">{{ comment.createdAt }}</div>
+      </div>
+      <span>{{ comment.comment }}</span>
+    </div>
+  </div>
+</div>

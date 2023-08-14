@@ -25,6 +25,8 @@ import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.c
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
 import { EditInformationComponent } from './pages/admin-layout/edit-information/edit-information.component';
+import { ListProductsComponent } from './pages/admin-layout/list-products/list-products.component';
+import { EditProductComponent } from './pages/admin-layout/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { EditInformationComponent } from './pages/admin-layout/edit-information/
     AdminLoginComponent,
     EditUserByAdminComponent,
     EditInformationComponent,
+    ListProductsComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,
