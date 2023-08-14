@@ -3,6 +3,7 @@ import { HTTPService } from 'src/app/common/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Comment } from 'src/app/entity/comments';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-product',
@@ -62,6 +63,32 @@ export class EditProductComponent {
   }
 
   onUpdate() {
-    console.log(this.productForm.value);
+    let value = this.productForm.value;
+    let form = {
+      id: this.id,
+      name: value.name,
+      price: value.price,
+      description: value.description,
+      brand: value.brand,
+      color: value.color,
+      material: value.material,
+      size: value.size,
+    };
+    this.HTTPService.editProduct(form).subscribe(
+      (result) => {
+        alert('Updated Product successfully');
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.error.message);
+      }
+    );
+  }
+
+  onDelteComment(id: number) {
+    this.HTTPService.deleteComment(id).subscribe((result) => {
+      this.comments = this.comments.filter((comment) => {
+        return comment.id != id;
+      });
+    });
   }
 }

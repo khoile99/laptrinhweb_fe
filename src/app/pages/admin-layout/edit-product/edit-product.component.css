@@ -73,6 +73,7 @@
 
 .comment__ele {
   padding: 10px;
+  position: relative;
 }
 
 .comment-row {
@@ -154,4 +155,10 @@ textarea {
   overflow: hidden;
   resize: none;
   font-family: inherit;
+}
+.del-btn {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  cursor: pointer;
 }

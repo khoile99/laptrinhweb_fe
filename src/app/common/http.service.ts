@@ -169,11 +169,19 @@ export class HTTPService {
   editProduct(productForm: any): Observable<any> {
     var token = this.storage.getAdminToken();
     var headers = { Authorization: `Bearer ${token}` };
-    let form = new productForm();
+    let form = new FormData();
     for (let key in productForm) {
       form.append(key, productForm[key]);
     }
     return this.http.post<any>(`${this.apiUrl}/admin/edit_product`, form, {
+      headers: headers,
+    });
+  }
+
+  deleteComment(id: Number) {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.delete<any>(`${this.apiUrl}/admin/delete_comment/${id}`, {
       headers: headers,
     });
   }
