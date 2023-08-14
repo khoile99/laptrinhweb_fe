@@ -117,4 +117,20 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  listUsers(): Observable<any> {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<any>(`${this.apiUrl}/admin/list_user`, {
+      headers: headers,
+    });
+  }
+
+  getUserByAdmin(id: number): Observable<any> {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<any>(`${this.apiUrl}/admin/get_user/${id}`, {
+      headers,
+    });
+  }
 }

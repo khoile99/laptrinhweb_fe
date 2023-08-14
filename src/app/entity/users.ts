@@ -7,3 +7,14 @@ export interface User {
   userName: string;
   userType: number | null;
 }
+
+export interface UserWithId {
+  id: number;
+  address: string;
+  birthday: string;
+  email: string;
+  isBlocked: boolean | null;
+  phoneNumber: string;
+  userName: string;
+  userType: number | null;
+}

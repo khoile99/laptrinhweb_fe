@@ -12,6 +12,7 @@ import { CartsComponent } from './pages/main-layout/carts/carts.component';
 import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
+import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    children: [{ path: 'list-users', component: ListUsersComponent }],
+    children: [
+      { path: 'list-users', component: ListUsersComponent },
+      { path: 'edit-user/:id', component: EditUserByAdminComponent },
+    ],
   },
 ];
 @NgModule({

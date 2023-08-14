@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="form">
+    <form class="form__update" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+      <span class="form__update-title"> Update user name: {{ userName }}</span>
+      <div class="form__update__input">
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          formControlName="address"
+        />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-address-card" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <input
+          type="text"
+          name="phoneNumber"
+          placeholder="Phone Number"
+          formControlName="phoneNumber"
+          maxlength="10"
+        />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <input
+          type="date"
+          name="birthday"
+          placeholder="Birthday"
+          formControlName="birthday"
+        />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <p>User Type:</p>
+        <div class="row">
+          <div>
+            <input
+              type="radio"
+              id="userTypeRegular"
+              name="userType"
+              value="0"
+            />
+            <label for="userTypeRegular">Regular</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="userTypePremium"
+              name="userType"
+              value="1"
+            />
+            <label for="userTypePremium">Premium</label>
+          </div>
+        </div>
+      </div>
+      <div class="form__update__input">
+        <p>Blocked:</p>
+        <div class="row">
+          <div>
+            <input type="radio" id="isBlockedTrue" name="isBlocked" value="1" />
+            <label for="isBlockedTrue">True</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="isBlockedFalse"
+              name="isBlocked"
+              value="0"
+            />
+            <label for="isBlockedFalse">False</label>
+          </div>
+        </div>
+      </div>
+      <div class="form__update__btn">
+        <button type="submit" [disabled]="!updateForm.valid">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

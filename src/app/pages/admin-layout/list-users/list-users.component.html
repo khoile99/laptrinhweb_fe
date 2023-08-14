@@ -1,1 +1,30 @@
-<p>list-users works!</p>
+<div class="container">
+  <div *ngFor="let user of users" class="user-card">
+    <h2>{{ user.userName }}</h2>
+    <div class="row">
+      <div class="title">Address:</div>
+      <span>{{ user.address }}</span>
+    </div>
+    <div class="row">
+      <div class="title">Phone Number:</div>
+      <span>{{ user.phoneNumber }}</span>
+    </div>
+    <div class="row">
+      <div class="title">Email:</div>
+      <span>{{ user.email }}</span>
+    </div>
+    <div class="row">
+      <div class="title">Birthday:</div>
+      <span>{{ user.birthday }}</span>
+    </div>
+    <div class="row">
+      <div class="title">User Type:</div>
+      <span>{{ user.userType }}</span>
+    </div>
+    <div class="row">
+      <div class="title">Blocked:</div>
+      <span>{{ user.isBlocked }}</span>
+    </div>
+    <button [routerLink]="['/admin/edit-user', user.id]">Edit</button>
+  </div>
+</div>
