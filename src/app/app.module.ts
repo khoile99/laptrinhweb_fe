@@ -24,6 +24,7 @@ import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.componen
 import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
+import { EditInformationComponent } from './pages/admin-layout/edit-information/edit-information.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-lay
     ListUsersComponent,
     AdminLoginComponent,
     EditUserByAdminComponent,
+    EditInformationComponent,
   ],
   imports: [
     BrowserModule,

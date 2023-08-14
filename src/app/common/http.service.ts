@@ -153,4 +153,16 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  updateInformation(addressForm: any): Observable<any> {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    let form = new FormData();
+    for (let key in addressForm) {
+      form.append(key, addressForm[key]);
+    }
+    return this.http.post<any>(`${this.apiUrl}/admin/change_address`, form, {
+      headers: headers,
+    });
+  }
 }

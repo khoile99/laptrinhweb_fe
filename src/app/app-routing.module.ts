@@ -13,6 +13,7 @@ import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.componen
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
 import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
+import { EditInformationComponent } from './pages/admin-layout/edit-information/edit-information.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,7 @@ const routes: Routes = [
     children: [
       { path: 'list-users', component: ListUsersComponent },
       { path: 'edit-user/:id', component: EditUserByAdminComponent },
+      { path: 'edit-information', component: EditInformationComponent },
     ],
   },
 ];

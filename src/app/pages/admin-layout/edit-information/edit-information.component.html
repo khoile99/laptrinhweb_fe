@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="form">
+    <form class="form__update" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+      <span class="form__update-title"> Update Information</span>
+      <div class="form__update__input">
+        <input type="text" placeholder="Address" formControlName="address" />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-address-card" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <input
+          type="text"
+          placeholder="Phone Number"
+          formControlName="phone"
+          maxlength="10"
+        />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__input">
+        <input type="text" placeholder="Email" formControlName="email" />
+        <span class="form__update__input__symbol">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="form__update__btn">
+        <button type="submit" [disabled]="!updateForm.valid">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
