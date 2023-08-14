@@ -54,7 +54,7 @@
             <input
               type="radio"
               id="userTypeRegular"
-              name="userType"
+              formControlName="userType"
               value="0"
             />
             <label for="userTypeRegular">Regular</label>
@@ -63,7 +63,7 @@
             <input
               type="radio"
               id="userTypePremium"
-              name="userType"
+              formControlName="userType"
               value="1"
             />
             <label for="userTypePremium">Premium</label>
@@ -74,14 +74,19 @@
         <p>Blocked:</p>
         <div class="row">
           <div>
-            <input type="radio" id="isBlockedTrue" name="isBlocked" value="1" />
+            <input
+              type="radio"
+              id="isBlockedTrue"
+              formControlName="isBlocked"
+              value="1"
+            />
             <label for="isBlockedTrue">True</label>
           </div>
           <div>
             <input
               type="radio"
               id="isBlockedFalse"
-              name="isBlocked"
+              formControlName="isBlocked"
               value="0"
             />
             <label for="isBlockedFalse">False</label>

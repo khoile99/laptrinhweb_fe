@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HTTPService } from 'src/app/common/http.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-user',
@@ -40,6 +41,8 @@ export class EditUserComponent {
           phoneNumber: user.phone_number,
           email: user.email,
           birthday: user.birthday,
+          userType: user.user_type.toString(),
+          isBlocked: user.is_blocked ? '1' : '0',
         });
         this.userName = user.user_name;
       });
@@ -47,6 +50,23 @@ export class EditUserComponent {
   }
 
   onUpdate() {
-    console.log(this.updateForm.value);
+    let value = this.updateForm.value;
+    let form = {
+      userId: this.id,
+      address: value.address,
+      phoneNumber: value.phoneNumber,
+      email: value.email,
+      birthday: value.birthday,
+      userType: parseInt(value.userType || '0'),
+      isBlocked: parseInt(value.isBlocked || '0'),
+    };
+    this.HTTPService.updateUserByAdmin(form).subscribe(
+      (result) => {
+        alert('Updated Successfully');
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.error.message);
+      }
+    );
   }
 }

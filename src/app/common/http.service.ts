@@ -133,4 +133,16 @@ export class HTTPService {
       headers,
     });
   }
+
+  updateUserByAdmin(userForm: any): Observable<any> {
+    let form = new FormData();
+    for (let key in userForm) {
+      form.append(key, userForm[key]);
+    }
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.post<any>(`${this.apiUrl}/admin/edit_user`, form, {
+      headers: headers,
+    });
+  }
 }

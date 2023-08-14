@@ -23,6 +23,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
 import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-layout/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
     AdminLayoutComponent,
     ListUsersComponent,
     AdminLoginComponent,
+    EditUserByAdminComponent,
   ],
   imports: [
     BrowserModule,
