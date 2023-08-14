@@ -34,4 +34,16 @@ export class BrowserStorageService {
   getToken() {
     return this.get('token');
   }
+
+  getAdminToken() {
+    return this.get('adminToken');
+  }
+
+  clearAdminToken() {
+    this.remove('adminToken');
+  }
+
+  setAdminToken(token: string) {
+    this.set('adminToken', token);
+  }
 }

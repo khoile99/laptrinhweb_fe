@@ -9,6 +9,9 @@ import { DetailComponent } from './pages/main-layout/detail/detail.component';
 import { SupportComponent } from './pages/main-layout/support/support.component';
 import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.component';
 import { CartsComponent } from './pages/main-layout/carts/carts.component';
+import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'admin/login',
+    component: AdminLoginComponent,
   },
   {
     path: 'register',
@@ -35,6 +42,11 @@ const routes: Routes = [
       { path: 'edit-user', component: EditUserComponent },
       { path: 'carts', component: CartsComponent },
     ],
+  },
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [{ path: 'list-users', component: ListUsersComponent }],
   },
 ];
 @NgModule({

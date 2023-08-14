@@ -20,6 +20,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.component';
 import { CartsComponent } from './pages/main-layout/carts/carts.component';
 import { CartComponent } from './components/cart/cart.component';
+import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
+import { ListUsersComponent } from './pages/admin-layout/list-users/list-users.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { CartComponent } from './components/cart/cart.component';
     EditUserComponent,
     CartsComponent,
     CartComponent,
+    AdminLayoutComponent,
+    ListUsersComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

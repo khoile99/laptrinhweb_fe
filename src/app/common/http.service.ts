@@ -22,6 +22,14 @@ export class HTTPService {
     return this.http.post<any>(`${this.apiUrl}/login`, form);
   }
 
+  loginAdmin(userForm: any): Observable<any> {
+    let form = new FormData();
+    for (let key in userForm) {
+      form.append(key, userForm[key]);
+    }
+    return this.http.post<any>(`${this.apiUrl}/admin/login`, form);
+  }
+
   getUser(): Observable<any> {
     var token = this.storage.getToken();
     var headers = { Authorization: `Bearer ${token}` };
