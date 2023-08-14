@@ -80,4 +80,33 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  getCarts(): Observable<any> {
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<any>(`${this.apiUrl}/get_carts`, {
+      headers: headers,
+    });
+  }
+
+  updateNumberCart(id: any, numberProduct: any): Observable<any> {
+    let form = new FormData();
+    form.append('id', id);
+    form.append('number', numberProduct);
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.post<any>(`${this.apiUrl}/update_cart`, form, {
+      headers: headers,
+    });
+  }
+
+  deleteCart(id: any): Observable<any> {
+    let form = new FormData();
+    form.append('id', id);
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.post<any>(`${this.apiUrl}/delete_order`, form, {
+      headers: headers,
+    });
+  }
 }

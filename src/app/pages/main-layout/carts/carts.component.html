@@ -1,0 +1,7 @@
+<app-cart
+  *ngFor="let cart of carts"
+  [cart]="cart"
+  (onDeleteCart)="updateOnDeleteCard($event)"
+>
+  {{ cart }}
+</app-cart>

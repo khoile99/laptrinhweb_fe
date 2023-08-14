@@ -17,7 +17,9 @@
           ><i class="fa fa-user"></i>{{ user.userName }}</a
         >
         <div class="user-table" *ngIf="showtableUser">
-          <div><i class="fa fa-shopping-cart"></i>Go to Cart</div>
+          <div routerLink="/carts" routerLinkActive="active">
+            <i class="fa fa-shopping-cart"></i>Go to Cart
+          </div>
           <div routerLink="/edit-user" routerLinkActive="active">
             <i class="fa fa-edit"></i>Edit Information
           </div>

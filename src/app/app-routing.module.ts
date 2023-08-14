@@ -8,6 +8,7 @@ import { SearchComponent } from './pages/main-layout/search/search.component';
 import { DetailComponent } from './pages/main-layout/detail/detail.component';
 import { SupportComponent } from './pages/main-layout/support/support.component';
 import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.component';
+import { CartsComponent } from './pages/main-layout/carts/carts.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'detail/:id', component: DetailComponent },
       { path: 'support', component: SupportComponent },
       { path: 'edit-user', component: EditUserComponent },
+      { path: 'carts', component: CartsComponent },
     ],
   },
 ];

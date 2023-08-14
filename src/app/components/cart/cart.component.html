@@ -1,0 +1,30 @@
+<div class="cart">
+  <div class="cart__img">
+    <img src="{{ cart.img }}" />
+  </div>
+  <div class="cart__describe">
+    <div class="cart__describe__title">{{ cart.name }}</div>
+    <div class="cart__describe__price">${{ cart.price }}</div>
+    <div class="cart__describe__number">
+      <div class="number-update">
+        <i
+          class="fa-solid fa-minus signal"
+          (click)="
+            cart.number === 0
+              ? (cart.number = 0)
+              : (cart.number = cart.number - 1)
+          "
+        ></i>
+        <div>{{ cart.number }}</div>
+        <i
+          class="fa-solid fa-plus signal"
+          (click)="cart.number = cart.number + 1"
+        ></i>
+      </div>
+      <button (click)="onUpdate(cart)">Update</button>
+    </div>
+  </div>
+  <div>
+    <div><i class="fa fa-trash delete" aria-hidden="true" (click)="onDelete(cart.id)"></i></div>
+  </div>
+</div>

@@ -18,6 +18,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { SupportComponent } from './pages/main-layout/support/support.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.component';
+import { CartsComponent } from './pages/main-layout/carts/carts.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.compo
     SupportComponent,
     FooterComponent,
     EditUserComponent,
+    CartsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
