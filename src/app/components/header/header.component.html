@@ -18,7 +18,9 @@
         >
         <div class="user-table" *ngIf="showtableUser">
           <div><i class="fa fa-shopping-cart"></i>Go to Cart</div>
-          <div><i class="fa fa-edit"></i>Edit Information</div>
+          <div routerLink="/edit-user" routerLinkActive="active">
+            <i class="fa fa-edit"></i>Edit Information
+          </div>
           <div (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</div>
         </div>
       </div>

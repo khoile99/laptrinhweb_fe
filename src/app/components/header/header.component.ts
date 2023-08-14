@@ -62,6 +62,7 @@ export class HeaderComponent implements OnInit {
           userName: result.user_name,
           userType: result.user_type,
         };
+        this.data.changeuser(this.user);
       });
     }
   }

@@ -67,4 +67,17 @@ export class HTTPService {
   getInformation(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/public/get_information`);
   }
+
+  editUser(userForm: any): Observable<any> {
+    let form = new FormData();
+    for (let key in userForm) {
+      if (key == 'password' && userForm[key] == '') continue;
+      form.append(key, userForm[key]);
+    }
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.post<any>(`${this.apiUrl}/edit`, form, {
+      headers: headers,
+    });
+  }
 }

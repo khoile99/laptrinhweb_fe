@@ -17,6 +17,7 @@ import { DetailComponent } from './pages/main-layout/detail/detail.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SupportComponent } from './pages/main-layout/support/support.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EditUserComponent } from './pages/main-layout/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductCardComponent,
     SupportComponent,
     FooterComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
