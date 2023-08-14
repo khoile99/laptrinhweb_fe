@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HTTPService } from 'src/app/common/http.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -29,7 +30,8 @@ export class EditUserComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private HTTPService: HTTPService
+    private HTTPService: HTTPService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -68,5 +70,11 @@ export class EditUserComponent {
         alert(error.error.message);
       }
     );
+  }
+  onDelete() {
+    this.HTTPService.deleteUser(this.id).subscribe((result) => {
+      alert('Delete user successfully');
+      this.router.navigate(['/admin/list-users']);
+    });
   }
 }

@@ -145,4 +145,12 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  deleteUser(id: number): Observable<any> {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.delete<any>(`${this.apiUrl}/admin/delete_user/${id}`, {
+      headers: headers,
+    });
+  }
 }

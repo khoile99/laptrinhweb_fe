@@ -95,6 +95,9 @@
       </div>
       <div class="form__update__btn">
         <button type="submit" [disabled]="!updateForm.valid">Update</button>
+        <button type="button" (click)="onDelete()">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
       </div>
     </form>
   </div>
