@@ -5,6 +5,7 @@ import { BrowserStorageService } from 'src/app/common/storage.service';
 import { User } from 'src/app/entity/users';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/common/data.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -52,18 +53,23 @@ export class HeaderComponent implements OnInit {
     this.allProductList = this.productList;
     this.data.changeProducts(this.allProductList);
     if (this.storage.getToken()) {
-      this.HTTPService.getUser().subscribe((result) => {
-        this.user = {
-          address: result.address,
-          birthday: result.birthday,
-          email: result.email,
-          isBlocked: result.is_blocked,
-          phoneNumber: result.phone_number,
-          userName: result.user_name,
-          userType: result.user_type,
-        };
-        this.data.changeuser(this.user);
-      });
+      this.HTTPService.getUser().subscribe(
+        (result) => {
+          this.user = {
+            address: result.address,
+            birthday: result.birthday,
+            email: result.email,
+            isBlocked: result.is_blocked,
+            phoneNumber: result.phone_number,
+            userName: result.user_name,
+            userType: result.user_type,
+          };
+          this.data.changeuser(this.user);
+        },
+        (error: HttpErrorResponse) => {
+          this.storage.clearToken();
+        }
+      );
     }
   }
 

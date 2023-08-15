@@ -3,6 +3,7 @@ import { BrowserStorageService } from 'src/app/common/storage.service';
 import { Router } from '@angular/router';
 import { Admin } from 'src/app/entity/users';
 import { HTTPService } from 'src/app/common/http.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin-header',
@@ -22,13 +23,18 @@ export class AdminHeaderComponent {
     private router: Router,
     private HTTPService: HTTPService
   ) {
-    this.HTTPService.getAdmin().subscribe((admin) => {
-      this.admin = {
-        id: admin.id,
-        userName: admin.user_name,
-        email: admin.email,
-      };
-    });
+    this.HTTPService.getAdmin().subscribe(
+      (admin) => {
+        this.admin = {
+          id: admin.id,
+          userName: admin.user_name,
+          email: admin.email,
+        };
+      },
+      (error: HttpErrorResponse) => {
+        this.onLogout();
+      }
+    );
   }
   onLogout() {
     this.BrowserStorageService.clearAdminToken();
