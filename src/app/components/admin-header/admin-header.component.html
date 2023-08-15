@@ -1,0 +1,39 @@
+<div class="cover" *ngIf="showTable" (click)="showTable = false"></div>
+<header>
+  <div class="header__nav">
+    <div class="header__nav-home">
+      <a routerLink="/home" routerLinkActive="active"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+    </div>
+    <div class="header__nav-right">
+      <a routerLink="/admin/list-users" routerLinkActive="active">List Users</a>
+      <a routerLink="/admin/list-products" routerLinkActive="active"
+        >List Products</a
+      >
+      <a routerLink="/admin/edit-information" routerLinkActive="active"
+        >Information</a
+      >
+      <div *ngIf="admin.userName">
+        <a id="user" (click)="showTable = true"
+          ><i class="fa fa-user"></i>{{ admin.userName }}</a
+        >
+        <div class="user-table" *ngIf="showTable">
+          <div (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</div>
+        </div>
+      </div>
+      <a
+        routerLink="admin/login"
+        routerLinkActive="active"
+        *ngIf="!admin.userName"
+        >Login</a
+      >
+      <a
+        routerLink="admin/register"
+        routerLinkActive="active"
+        *ngIf="!admin.userName"
+        >Register</a
+      >
+    </div>
+  </div>
+</header>

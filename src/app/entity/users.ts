@@ -18,3 +18,9 @@ export interface UserWithId {
   userName: string;
   userType: number | null;
 }
+
+export interface Admin {
+  id: number;
+  userName: string;
+  email: string;
+}

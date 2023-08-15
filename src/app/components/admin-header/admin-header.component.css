@@ -1,0 +1,123 @@
+.cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+header {
+  padding: 20px;
+  background: aquamarine;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav-right {
+  display: flex;
+  gap: 30px;
+}
+
+.header__nav-home {
+  margin-left: 20px;
+}
+
+.header__nav-home i {
+  font-size: 30px;
+  margin-right: unset;
+}
+
+.header__search {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search__input {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__input input {
+  border: unset;
+  height: 100%;
+  background: transparent;
+  outline: unset;
+  width: 100%;
+}
+
+.search__input i {
+  cursor: pointer;
+}
+
+.table {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 20px;
+}
+
+.table div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: context-menu;
+}
+
+.table div:hover {
+  background-color: aquamarine;
+}
+
+a {
+  font-size: 20px;
+}
+
+i {
+  margin-right: 5px;
+}
+
+#user {
+  cursor: pointer;
+  position: relative;
+}
+
+.user-table {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  right: 0;
+}
+
+.user-table div {
+  cursor: default;
+  font-size: 25px;
+  height: 50px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.user-table div:hover {
+  background-color: aquamarine;
+}

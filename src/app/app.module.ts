@@ -27,6 +27,7 @@ import { EditUserComponent as EditUserByAdminComponent } from './pages/admin-lay
 import { EditInformationComponent } from './pages/admin-layout/edit-information/edit-information.component';
 import { ListProductsComponent } from './pages/admin-layout/list-products/list-products.component';
 import { EditProductComponent } from './pages/admin-layout/edit-product/edit-product.component';
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { EditProductComponent } from './pages/admin-layout/edit-product/edit-pro
     EditInformationComponent,
     ListProductsComponent,
     EditProductComponent,
+    AdminHeaderComponent,
   ],
   imports: [
     BrowserModule,

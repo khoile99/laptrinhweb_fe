@@ -185,4 +185,12 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  getAdmin() {
+    var token = this.storage.getAdminToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<any>(`${this.apiUrl}/admin/get_admin`, {
+      headers: headers,
+    });
+  }
 }
