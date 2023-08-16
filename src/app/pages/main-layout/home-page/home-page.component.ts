@@ -12,8 +12,14 @@ export class HomePageComponent {
   page: number = 1;
   count: number = 0;
   tableSize: number = 6;
+  showImg1: boolean = false;
+  showImg2: boolean = true;
 
   constructor(private data: DataService) {
+    setInterval(() => {
+      this.showImg1 = !this.showImg1;
+      this.showImg2 = !this.showImg2;
+    }, 5000);
     this.data.currentProduct.subscribe(
       (products) => (this.products = products)
     );
