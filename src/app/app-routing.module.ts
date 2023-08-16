@@ -40,7 +40,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomePageComponent },
-      { path: 'search', component: SearchComponent },
+      { path: 'search/:query', component: SearchComponent },
       { path: 'detail/:id', component: DetailComponent },
       { path: 'support', component: SupportComponent },
       { path: 'edit-user', component: EditUserComponent },

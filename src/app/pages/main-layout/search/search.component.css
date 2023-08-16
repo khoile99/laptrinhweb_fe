@@ -1,0 +1,8 @@
+app-search-product-card {
+  width: fit-content;
+  display: flex;
+}
+
+.pagination-bar {
+  text-align: center;
+}

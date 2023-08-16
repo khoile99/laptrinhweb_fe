@@ -28,6 +28,7 @@ import { EditInformationComponent } from './pages/admin-layout/edit-information/
 import { ListProductsComponent } from './pages/admin-layout/list-products/list-products.component';
 import { EditProductComponent } from './pages/admin-layout/edit-product/edit-product.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { SearchProductCardComponent } from './components/search-product-card/search-product-card.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     ListProductsComponent,
     EditProductComponent,
     AdminHeaderComponent,
+    SearchProductCardComponent,
   ],
   imports: [
     BrowserModule,

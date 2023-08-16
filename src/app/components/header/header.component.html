@@ -43,7 +43,7 @@
         (input)="filterResult()"
         [(ngModel)]="nameFilter"
       />
-      <i class="fa fa-search"></i>
+      <i class="fa fa-search" [routerLink]="['/home/search', nameFilter]"></i>
     </div>
     <div *ngIf="showTable" class="table">
       <div

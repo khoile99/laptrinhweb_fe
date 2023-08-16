@@ -52,6 +52,10 @@ export class HTTPService {
     return this.http.get<any>(`${this.apiUrl}/public/get_product/${id}`);
   }
 
+  searchProduct(query: string | null): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/public/search_product/${query}`);
+  }
+
   getComments(id: string | null): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/public/get_comment/${id}`);
   }

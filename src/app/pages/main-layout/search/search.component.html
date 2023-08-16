@@ -1,1 +1,25 @@
-<p>search works!</p>
+<div
+  *ngFor="
+    let product of products
+      | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+    let i = index
+  "
+>
+  <app-search-product-card
+    [product]="product"
+    [routerLink]="['/home/detail', product.id]"
+  ></app-search-product-card>
+</div>
+<div class="pagination-bar">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
