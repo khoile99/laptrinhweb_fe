@@ -9,9 +9,11 @@ import { Cart } from 'src/app/entity/cart';
 })
 export class CartsComponent {
   carts: Cart[] = [];
+  totalPrice: number = 0;
   constructor(private HTTPService: HTTPService) {
     HTTPService.getCarts().subscribe((carts) => {
       this.carts = carts;
+      this.updatePrice();
     });
   }
 
@@ -19,5 +21,13 @@ export class CartsComponent {
     this.carts = this.carts.filter((cart) => {
       return cart.id != id;
     });
+    this.updatePrice();
+  }
+
+  updatePrice() {
+    this.totalPrice = 0;
+    for (let cart of this.carts) {
+      this.totalPrice += cart.number * cart.price;
+    }
   }
 }

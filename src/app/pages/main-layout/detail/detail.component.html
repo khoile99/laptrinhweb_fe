@@ -33,8 +33,24 @@
       <div class="describe">{{ product.description }}</div>
     </div>
     <div class="btn-cover">
-      <button><i class="fa fa-cart-plus"></i> Add to Cart</button>
-      <button class="bg-orange">Buy Now</button>
+      <div class="number-update">
+        <i
+          class="fa-solid fa-minus signal"
+          (click)="
+            numberProduct === 0
+              ? (numberProduct = 0)
+              : (numberProduct = numberProduct - 1)
+          "
+        ></i>
+        <div>{{ numberProduct }}</div>
+        <i
+          class="fa-solid fa-plus signal"
+          (click)="numberProduct = numberProduct + 1"
+        ></i>
+      </div>
+      <button (click)="onAddToCart()" [disabled]="!numberProduct">
+        <i class="fa fa-cart-plus"></i> Add to Cart
+      </button>
     </div>
   </div>
 </div>

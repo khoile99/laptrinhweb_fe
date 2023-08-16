@@ -193,4 +193,16 @@ export class HTTPService {
       headers: headers,
     });
   }
+
+  addCart(cartForm: any): Observable<any> {
+    var token = this.storage.getToken();
+    var headers = { Authorization: `Bearer ${token}` };
+    let form = new FormData();
+    for (let key in cartForm) {
+      form.append(key, cartForm[key]);
+    }
+    return this.http.post<any>(`${this.apiUrl}/add_cart`, form, {
+      headers: headers,
+    });
+  }
 }

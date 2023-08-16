@@ -2,6 +2,10 @@
   *ngFor="let cart of carts"
   [cart]="cart"
   (onDeleteCart)="updateOnDeleteCard($event)"
+  (onUpdatedCart)="updatePrice()"
 >
   {{ cart }}
 </app-cart>
+<div *ngIf="totalPrice">
+  <div class="price">${{ totalPrice }}</div>
+</div>

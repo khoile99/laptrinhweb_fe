@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HTTPService } from 'src/app/common/http.service';
 import { Products } from 'src/app/entity/products';
 import { Comment } from 'src/app/entity/comments';
+import { BrowserStorageService } from 'src/app/common/storage.service';
 
 @Component({
   selector: 'app-detail',
@@ -26,9 +27,12 @@ export class DetailComponent {
     img: [],
   };
 
+  numberProduct: number = 0;
+
   constructor(
     private route: ActivatedRoute,
-    private HTTPService: HTTPService
+    private HTTPService: HTTPService,
+    private BrowserStorageService: BrowserStorageService
   ) {}
 
   ngOnInit(): void {
@@ -63,5 +67,16 @@ export class DetailComponent {
       };
       this.comments.unshift(comment);
     });
+  }
+
+  onAddToCart() {
+    if (!this.BrowserStorageService.getToken()) {
+      alert('Please Login before buying');
+    } else {
+      let body = { id: this.id, number: this.numberProduct };
+      this.HTTPService.addCart(body).subscribe((result) => {
+        alert(result.message);
+      });
+    }
   }
 }
